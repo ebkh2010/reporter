@@ -26,6 +26,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import ir.khorramnejad.ebrahim.PermissenRequest.RequestHelper;
+import ir.khorramnejad.ebrahim.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
