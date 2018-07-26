@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:paddingTop="10dp"
+    tools:context=".Report.ActivityTimeDate">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/b11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/b1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:text="تاریخ رویداد را وارد کنید."
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/year_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="سال"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+
+            <TextView
+                android:id="@+id/blank1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ivAttachment"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="/"
+                android:textColor="#fff" />
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/mounth_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="ماه"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+
+            <TextView
+                android:id="@+id/blank2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ivAttachment"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="/"
+                android:textColor="#fff" />
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/day_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint=" روز"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/b22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/b2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:text="زمان رویداد را وارد کنید."
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1.2"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/hour_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="ساعت"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+
+            <TextView
+                android:id="@+id/blank1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ivAttachment"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text=":"
+                android:textColor="#fff" />
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/minut_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="دقیقه"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+
+            <TextView
+                android:id="@+id/blank2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ivAttachment"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text=":"
+                android:textColor="#fff" />
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/secound_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="ثانیه"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/b3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</RelativeLayout>
