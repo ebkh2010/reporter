@@ -7,16 +7,22 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import ir.khorramnejad.ebrahim.R;
+import ir.khorramnejad.ebrahim.Splash.G;
 
 public class ActivityTimeDate extends Activity {
 
+
+
+    Button next;
 
 
     MaterialBetterSpinner yearSpinner,mounthSpinner,daySpinner,
@@ -52,55 +58,107 @@ public class ActivityTimeDate extends Activity {
         setContentView(R.layout.activity_time_date);
 
 
+        next = findViewById(R.id.btn_date_next);
 
 
         yearSpinner = findViewById(R.id.year_spinner);
-        ArrayAdapter<String> yadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
+        final ArrayAdapter<String> yadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
                 android.R.layout.simple_dropdown_item_1line, year);
+
         yearSpinner.setAdapter(yadapter);
-
-        yearSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        yearSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                G.jyear = Integer.parseInt(String.valueOf(parent.getItemAtPosition(position).toString()));
             }
         });
+
+
 
 
         mounthSpinner = findViewById(R.id.mounth_spinner);
         ArrayAdapter<String> madapter = new ArrayAdapter<String>(ActivityTimeDate.this,
                 android.R.layout.simple_dropdown_item_1line, mounth);
         mounthSpinner.setAdapter(madapter);
+        mounthSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                G.jmounth = position + 1;
+                if ((G.jmounth <= 6) & (G.jday == 31)) G.jday = 30;
+
+            }
+        });
+
+
 
         daySpinner = findViewById(R.id.day_spinner);
-        ArrayAdapter<String> dadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
-                android.R.layout.simple_dropdown_item_1line, day1);
-        daySpinner.setAdapter(dadapter);
+
+        if (G.jmounth < 6) {
+            ArrayAdapter<String> dadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
+                    android.R.layout.simple_dropdown_item_1line, day1);
+            daySpinner.setAdapter(dadapter);
+        } else {
+            ArrayAdapter<String> dadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
+                    android.R.layout.simple_dropdown_item_1line, day2);
+            daySpinner.setAdapter(dadapter);
+        }
+
+        daySpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                G.jday = position + 1;
+
+            }
+        });
+
 
         hourSpinner = findViewById(R.id.hour_spinner);
         ArrayAdapter<String> hadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
                 android.R.layout.simple_dropdown_item_1line, hour);
         hourSpinner.setAdapter(hadapter);
+        hourSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                G.hTime = position + 1;
+
+            }
+        });
+
 
         minutSpinner = findViewById(R.id.minut_spinner);
         ArrayAdapter<String> minadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
                 android.R.layout.simple_dropdown_item_1line, minut);
         minutSpinner.setAdapter(minadapter);
+        minutSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                G.mTime = position + 1;
+
+            }
+        });
+
+
 
         secoundSpinner = findViewById(R.id.secound_spinner);
         ArrayAdapter<String> sadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
                 android.R.layout.simple_dropdown_item_1line, minut);
         secoundSpinner.setAdapter(sadapter);
+        secoundSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                G.sTime = position + 1;
+
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
-
-
-
 
 }
 

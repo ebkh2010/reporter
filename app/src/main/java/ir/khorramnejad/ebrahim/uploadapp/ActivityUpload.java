@@ -28,10 +28,10 @@ import java.net.URL;
 import ir.khorramnejad.ebrahim.PermissenRequest.RequestHelper;
 import ir.khorramnejad.ebrahim.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class ActivityUpload extends AppCompatActivity implements View.OnClickListener{
 
     private static final int PICK_FILE_REQUEST = 1;
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = ActivityUpload.class.getSimpleName();
     private String selectedFilePath;
     private String SERVER_URL = "http://khorramnejad.ir/uploads/upload.php";
     ImageView ivAttachment;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //on upload button Click
             if(selectedFilePath != null){
-                dialog = ProgressDialog.show(MainActivity.this,"",
+                dialog = ProgressDialog.show(ActivityUpload.this,"",
                         "Uploading File...",true);
 
                 new Thread(new Runnable() {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }).start();
             }else{
-                Toast.makeText(MainActivity.this,"Please choose a File First",
+                Toast.makeText(ActivityUpload.this,"Please choose a File First",
                         Toast.LENGTH_SHORT).show();
             }
 
@@ -211,16 +211,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(MainActivity.this,"File Not Found",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityUpload.this,"File Not Found",Toast.LENGTH_SHORT).show();
                     }
                 });
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-                Toast.makeText(MainActivity.this, "URL error!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityUpload.this, "URL error!", Toast.LENGTH_SHORT).show();
 
             } catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(MainActivity.this, "Cannot Read/Write File!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityUpload.this, "Cannot Read/Write File!", Toast.LENGTH_SHORT).show();
             }
             dialog.dismiss();
             return serverResponseCode;
@@ -235,12 +235,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         request.request(Manifest.permission.READ_EXTERNAL_STORAGE, new RequestHelper.OnGrantedListener() {
             @Override
             public void onGranted() {
-                Toast.makeText(MainActivity.this, "Granted For RECEIVE SMS", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityUpload.this, "Granted For RECEIVE SMS", Toast.LENGTH_SHORT).show();
             }
         }, new RequestHelper.OnDeniedListener() {
             @Override
             public void onDenied() {
-                new AlertDialog.Builder(MainActivity.this)
+                new AlertDialog.Builder(ActivityUpload.this)
                         .setTitle("Permission Required")
                         .setMessage("Read SD card required for app")
                         .setPositiveButton("Ask me again", new DialogInterface.OnClickListener() {
@@ -260,12 +260,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         request.request(Manifest.permission.ACCESS_NETWORK_STATE, new RequestHelper.OnGrantedListener() {
             @Override
             public void onGranted() {
-                Toast.makeText(MainActivity.this, "Granted For RECEIVE SMS", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityUpload.this, "Granted For RECEIVE SMS", Toast.LENGTH_SHORT).show();
             }
         }, new RequestHelper.OnDeniedListener() {
             @Override
             public void onDenied() {
-                new AlertDialog.Builder(MainActivity.this)
+                new AlertDialog.Builder(ActivityUpload.this)
                         .setTitle("Permission Required")
                         .setMessage("network required for app")
                         .setPositiveButton("Ask me again", new DialogInterface.OnClickListener() {
@@ -286,12 +286,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         request.request(Manifest.permission.ACCESS_NETWORK_STATE, new RequestHelper.OnGrantedListener() {
             @Override
             public void onGranted() {
-                Toast.makeText(MainActivity.this, "Granted For RECEIVE SMS", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityUpload.this, "Granted For RECEIVE SMS", Toast.LENGTH_SHORT).show();
             }
         }, new RequestHelper.OnDeniedListener() {
             @Override
             public void onDenied() {
-                new AlertDialog.Builder(MainActivity.this)
+                new AlertDialog.Builder(ActivityUpload.this)
                         .setTitle("Permission Required")
                         .setMessage("Internet required for app")
                         .setPositiveButton("Ask me again", new DialogInterface.OnClickListener() {

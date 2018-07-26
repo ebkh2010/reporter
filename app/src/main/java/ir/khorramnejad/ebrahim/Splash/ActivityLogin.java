@@ -1,6 +1,7 @@
 package ir.khorramnejad.ebrahim.Splash;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.github.florent37.materialtextfield.MaterialTextField;
 
 import ir.khorramnejad.ebrahim.R;
+import ir.khorramnejad.ebrahim.Report.ActivitySelectReport;
+import ir.khorramnejad.ebrahim.Report.ActivityTimeDate;
 
 public class ActivityLogin extends Activity{
 
@@ -45,15 +48,17 @@ public class ActivityLogin extends Activity{
                 {
                     if (epass.getText().toString().equals( mainPass))
                     {
-                        //go to main activity
-                        loginReport.setText("Succsess!");
+                        Intent intent = new Intent(ActivityLogin.this,
+                                ir.khorramnejad.ebrahim.Report.ActivitySelectReport.class);
+                        startActivity(intent);
+                        finish();
                     }else{
                         loginReport.setText("Username is correct but password is not!");
                     }
                 }
                 else
                     {
-                    loginReport.setText("Username is incorrect! user is:" + euser.getText().toString());
+                    loginReport.setText("Username is incorrect!");
                 }
 
             }
