@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:paddingTop="10dp"
+    tools:context=".Report.ActivityTimeDate">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/b11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/place_b1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:text="مکان رویداد را مشخص کنید."
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/place_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="مکان رویداد"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/b22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/place_b2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:text="سطح اهمیت رویداد را مشخص کنید."
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="horizontal">
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/important_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="اهمیت رویداد"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/b3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/b22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/place_b3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:text="نوع رویداد را مشخص کنید."
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="horizontal">
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/category_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="نوع رویداد"
+                android:textColor="#ffff"
+                android:textColorHighlight="#ffff"
+                android:textColorHint="#CFD8DC"
+                app:met_floatingLabel="normal" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/b3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivAttachment"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_place_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1.1"
+            android:background="#039be5"
+            android:gravity="center"
+            android:text="مرحله بعد"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -14,11 +14,11 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import ir.khorramnejad.ebrahim.R;
+import ir.khorramnejad.ebrahim.Splash.G;
 
 public class ActivitySelectReport extends Activity  {
 
-    Button happen,tecnical;
-    public int selection=0;
+    Button happen,tecnical,fixing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +27,12 @@ public class ActivitySelectReport extends Activity  {
 
         happen = findViewById(R.id.btn_hapenning);
         tecnical = findViewById(R.id.btn_tecnical);
+        fixing = findViewById(R.id.btn_fixing);
 
         happen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selection=1;
+                G.reportMode=1;
                 Intent intent = new Intent(ActivitySelectReport.this,
                         ActivityTimeDate.class);
                 startActivity(intent);
@@ -43,7 +44,19 @@ public class ActivitySelectReport extends Activity  {
         tecnical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selection=2;
+                G.reportMode=2;
+                Intent intent = new Intent(ActivitySelectReport.this,
+                        ActivityTimeDate.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        fixing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                G.reportMode=3;
                 Intent intent = new Intent(ActivitySelectReport.this,
                         ActivityTimeDate.class);
                 startActivity(intent);

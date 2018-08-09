@@ -23,14 +23,24 @@
         </activity>
 
         <activity
-            android:name="ir.khorramnejad.ebrahim.Report.ActivityTimeDate"
+            android:name="ir.khorramnejad.ebrahim.Report.ActivityTitle"
             >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name="ir.khorramnejad.ebrahim.Report.ActivityPlaceImportant"
+            >
+
+        </activity>
+
+        <activity
+            android:name="ir.khorramnejad.ebrahim.Report.ActivityTimeDate"
+            >
         </activity>
 
         <activity

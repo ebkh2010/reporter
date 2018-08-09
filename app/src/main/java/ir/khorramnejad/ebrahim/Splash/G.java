@@ -14,15 +14,18 @@ public class G extends Application {
     public static final String
                                             DIR_SDCARD 				    = Environment.getExternalStorageDirectory()
                                                                         .getAbsolutePath();
-    public static int                       gyear,
-                                            gmounth,
-                                            gday,
+    public static String                    PLACE;
+    public static int                       reportMode,
                                             jyear,
                                             jmounth,
                                             jday,
                                             hTime,
                                             mTime,
-                                            sTime;
+                                            sTime,
+                                            Place,
+                                            category,
+                                            Importatnt;
+
 
 //    public static final String APP_SD_DIR                  = DIR_SDCARD    + "/ArTest";
 //    public static String FILE_NAME                   = "Audio";
