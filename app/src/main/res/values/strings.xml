@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">upload App</string>
+    <string name="app_name">نرم افزار گزارش</string>
+    <string name="title_hint">عنوان</string>
 </resources>

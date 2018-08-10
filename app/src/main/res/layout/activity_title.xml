@@ -14,85 +14,97 @@
         android:layout_margin="20dp"
         android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.14"
+        android:orientation="vertical">
 
-
-
-        <com.github.florent37.materialtextfield.MaterialTextField
-            android:id="@+id/txt_title"
+        <TextView
+            android:id="@+id/txt_title_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.13"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            app:mtf_image="@drawable/user"
-            app:mtf_labelColor="#666">
+            android:text="عنوان رویداد"
+            android:textColor="#fff"
+            android:textSize="18dp" />
 
-            <EditText
-                android:id="@+id/etxt_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="عنوان رویداد"
-                android:inputType="textMultiLine"
-                android:textColor="#333"
-                android:textSize="15sp" />
-
-        </com.github.florent37.materialtextfield.MaterialTextField>
-
-
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/etxt_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight=".6"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_height="wrap_content"
+            android:layout_weight="1.15"
+            android:background="#ffff"
+            android:inputType="text" />
 
-            <TextView
-                android:id="@+id/txt_disc"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".6"
+        android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/txt_title_disc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
                 android:text="شرح رویداد"
                 android:textColor="#fff"
                 android:textSize="18dp" />
 
-
-            <EditText
+        <EditText
                 android:id="@+id/etxt_disc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight=".9"
                 android:background="#ffff"
                 android:inputType="textMultiLine" />
 
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_title_next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="#039be5"
+                android:gravity="center"
+                android:text="مرحله بعد"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_title_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="#039be5"
+                android:gravity="center"
+                android:text="مرحله قبل"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txt_bb"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/ivAttachment"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1.2"
-            android:gravity="center"
-            android:textColor="#fff" />
-
-        <Button
-            android:id="@+id/btn_tittle_next"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="50dp"
-            android:layout_weight=".9"
-            android:background="#039be5"
-            android:gravity="center"
-            android:text="مرحله بعد"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
     </LinearLayout>
 

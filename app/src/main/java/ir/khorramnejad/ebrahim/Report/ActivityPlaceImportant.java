@@ -1,6 +1,7 @@
 package ir.khorramnejad.ebrahim.Report;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -19,8 +20,9 @@ public class ActivityPlaceImportant extends Activity {
 
 
 
-    private Button next;
+    private Button next,back;
     private TextView txtPlace,txtImportant,txtCategory;
+    private String txt_place,txt_importatnt,txt_category;
 
 
     MaterialBetterSpinner placeSpinner,importantSpinner,categorySpinner;
@@ -41,11 +43,26 @@ public class ActivityPlaceImportant extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place_importatnt);
 
+        if (G.reportMode == 1)
+        {
+            txt_place = "مکان اتفاق را وارد کنید.";
+            txt_category = "نوع اتفاق را وارد کنید.";
+            txt_importatnt = "سطح اهمیت اتفاق را مشخص کنید";
+        }else if (G.reportMode==2){
+            txt_place = "مکان مشاهده ایراد فنی را وارد کنید.";
+            txt_category = "نوع ایراد فنی را وارد کنید.";
+            txt_importatnt = "سطح اهمیت ایراد فنی را وارد کنید.";
+        }
+
 
         next = findViewById(R.id.btn_place_next);
+        back = findViewById(R.id.btn_place_back);
         txtPlace = findViewById(R.id.place_b1);
         txtImportant = findViewById(R.id.place_b2);
         txtCategory = findViewById(R.id.place_b3);
+        txtPlace.setText(txt_place);
+        txtCategory.setText(txt_category);
+        txtImportant.setText(txt_importatnt);
 
 
         placeSpinner = findViewById(R.id.place_spinner);
@@ -95,10 +112,21 @@ public class ActivityPlaceImportant extends Activity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               txtPlace.setText(place[G.Place]);
-               txtImportant.setText(important[G.Importatnt]);
-               txtCategory.setText(category[G.category]);
+                Intent intent = new Intent(ActivityPlaceImportant.this,
+                        ActivityTitle.class);
+                startActivity(intent);
+                finish();
 
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityPlaceImportant.this,
+                        ActivityTimeDate.class);
+                startActivity(intent);
+                finish();
             }
         });
 

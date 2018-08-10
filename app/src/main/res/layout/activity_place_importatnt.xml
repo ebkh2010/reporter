@@ -163,7 +163,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/b3"
+            android:id="@+id/bbb3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/ivAttachment"
@@ -171,6 +171,13 @@
             android:layout_weight="1.2"
             android:gravity="center"
             android:textColor="#fff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:orientation="horizontal">
+
 
         <Button
             android:id="@+id/btn_place_next"
@@ -187,6 +194,24 @@
             android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_place_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1.1"
+            android:background="#039be5"
+            android:gravity="center"
+            android:text="مرحله قبل"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     </LinearLayout>
 

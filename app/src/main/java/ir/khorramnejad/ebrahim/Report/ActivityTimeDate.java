@@ -1,6 +1,7 @@
 package ir.khorramnejad.ebrahim.Report;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -22,11 +23,14 @@ public class ActivityTimeDate extends Activity {
 
 
 
-    Button next;
+    private Button next,back;
 
+    TextView txtTime,txtDate;
 
     MaterialBetterSpinner yearSpinner,mounthSpinner,daySpinner,
                             hourSpinner,minutSpinner,secoundSpinner;
+
+    String titleTime,titleDate;
 
     String[] year = {"1396","1397","1398","1399","1400","1401","1402","1403","1404","1405"};
     String[] mounth = { "فروردین","اردیبهشت","خرداد","تیر",
@@ -59,7 +63,25 @@ public class ActivityTimeDate extends Activity {
 
 
         next = findViewById(R.id.btn_date_next);
+        back = findViewById(R.id.btn_date_back);
 
+        if (G.reportMode == 1)
+        {
+            titleDate = "تاریخ اتفاق را وارد کنید.";
+            titleTime = "زمان اتفاق را وارد کنید.";
+        }else if (G.reportMode==2){
+            titleDate = "تاریخ مشاهده ایراد فنی را وارد کنید.";
+            titleTime = "زمان مشاهده ایراد فنی را وارد کنید.";
+        }else if (G.reportMode == 3){
+            titleDate = "تاریخ انجام تعمیر را وارد کنید.";
+            titleTime = "حدود زمان انجام تعمیر را وارد کنید.";
+        }
+
+
+        txtTime = findViewById(R.id.txt_time);
+        txtDate = findViewById(R.id.txt_date);
+        txtTime.setText(titleTime);
+        txtDate.setText(titleDate);
 
         yearSpinner = findViewById(R.id.year_spinner);
         final ArrayAdapter<String> yadapter = new ArrayAdapter<String>(ActivityTimeDate.this,
@@ -154,7 +176,29 @@ public class ActivityTimeDate extends Activity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (G.reportMode !=3){
+                    Intent intent = new Intent(ActivityTimeDate.this,
+                            ActivityPlaceImportant.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Intent intent = new Intent(ActivityTimeDate.this,
+                            ActivityTitle.class);
+                    startActivity(intent);
+                    finish();
+                }
 
+
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityTimeDate.this,
+                        ActivitySelectReport.class);
+                startActivity(intent);
+                finish();
             }
         });
 

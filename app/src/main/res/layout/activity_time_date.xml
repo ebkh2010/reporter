@@ -24,7 +24,7 @@
             android:textColor="#fff" />
 
         <TextView
-            android:id="@+id/bbb1"
+            android:id="@+id/txt_date"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/ivAttachment"
@@ -113,7 +113,7 @@
             android:textColor="#fff" />
 
         <TextView
-            android:id="@+id/b2"
+            android:id="@+id/txt_time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/ivAttachment"
@@ -201,19 +201,41 @@
             android:gravity="center"
             android:textColor="#fff" />
 
-        <Button
-            android:id="@+id/btn_date_next"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
-            android:layout_weight="1.1"
-            android:background="#039be5"
-            android:gravity="center"
-            android:text="مرحله بعد"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_date_next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="#039be5"
+                android:gravity="center"
+                android:text="مرحله بعد"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_date_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="#039be5"
+                android:gravity="center"
+                android:text="مرحله قبل"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
